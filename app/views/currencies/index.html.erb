@@ -1,0 +1,56 @@
+<section>
+  <div id="chart"></div>
+  <%= render_chart @chart, 'chart' %>
+
+  <div id="collected_currencies_chart" class="simple_pie_chart" width='300px' height='100px'>
+    <table>
+      <tr>
+        <th>Collected</th>
+        <% usercollection = MyCollection.find_all_by_user_id(current_user.id).count %>
+        <td><%= usercollection %></td>
+      </tr><tr>
+        <th>Not Collected</th>
+        <td><%= (Currency.all.count - usercollection).to_i %></td>
+      </tr>
+    </table>
+  </div>
+
+  <h1>Currencies</h1>
+
+  <table>
+    <tr>
+      <th>Country</th>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+    </tr>
+  <% form_tag("/mark_as_collected", :method => "put") do %>
+    <% @currencies.each do |currency| %>
+      <tr>
+        <td><%= currency.country.name %></td>
+        <td><%= currency.name %></td>
+        <td><%= currency.code %></td>
+        <% unless MyCollection.find_by_user_id_and_currency_id_and_country_id(current_user.id, currency.code, currency.country.code).nil? %>
+          <td colspan=2>Collected</td>
+        <% else %>
+          <td>Not Collected</td>
+          <td>Collect: <%= check_box_tag 'country_id[]', currency.country.id, false, {:id => 'country_id_'+currency.country.id } %></td>
+        <% end %>
+        <td><%= link_to 'Show', currency %></td>
+      </tr>
+    <% end %>
+    <tr><td colspan=4><%= submit_tag "Mark as Visited" %></td><td><a href="#" onclick="selectAll()">Select All</a></td><td></td></tr>
+  <% end %>
+  </table>
+</section>
+<script type="text/javascript">
+      function selectAll(){
+        $("input:checkbox").each(function(){
+          $(this).attr('checked', true);
+        });
+
+        return false;
+      }
+</script>

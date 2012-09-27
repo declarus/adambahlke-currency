@@ -1,0 +1,91 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+#one:
+#  name: NameOne
+#  code: CodeOne
+#  country: one
+
+#two:
+#  name: NameTwo
+#  code: CodeTwo
+#  country: two
+
+one:
+  name: Bahamian Dollar
+  code: BSD
+  country_id: BS
+
+two:
+  name: Barbados Dollar
+  code: BBD
+  country_id: BB
+
+three:
+  name: Belize Dollar
+  code: BZD
+  country_id: BZ
+
+four:
+  name: Canadian Dollar
+  code: CAD
+  country_id: CA
+
+five:
+  name: East Carribbean Dollar
+  code: XCD
+  country_id: AG
+
+six:
+  name: Costa Rican Colon
+  code: CRC
+  country_id: CR
+
+seven:
+  name: Cuban Peso
+  code: CUP
+  country_id: CU
+
+eight:
+  name: Mexican Nuevo Peso
+  code: MXN
+  country_id: MX
+
+nine:
+  name: United States Dollar
+  code: USD
+  country_id: US
+
+ten:
+  name: Euro
+  code: EU
+  country_id: IT
+
+eleven:
+  name: Euro
+  code: EU
+  country_id: DE
+
+twelve:
+  name: Euro
+  code: EU
+  country_id: FR
+
+thirteen:
+  name: Euro
+  code: EU
+  country_id: AT
+
+fourteen:
+  name: Swiss Franc
+  code: CHF
+  country_id: CH
+
+fifteen:
+  name: Pound Sterling
+  code: GBP
+  country_id: GB
+
+sixteen:
+  name: Australian Dollar
+  code: AUD
+  country_id: AU

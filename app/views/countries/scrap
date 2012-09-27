@@ -1,0 +1,21 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+#<!--    $("#countries").html('<%= escape_javascript render 'countries/country_list' %>'); -->
+#<!--    $('form').submit(function() {
+#      $.ajax({
+#        url: '/mark_as_visited',
+#        data: valuesToSubmit,
+#        dataType: "JSON",
+#        success: function(data) {
+#          alert('Hey');
+#        },
+#        error: function(data) {
+#          alert('No!');
+#        }
+#      });
+#      return false;
+#    }); -->
+  });
+
+
+</script>

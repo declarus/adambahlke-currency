@@ -1,0 +1,39 @@
+  <table id="country_list_table">
+    <%= form_tag( {:controller => :countries, :action => :mark_as_visited}, :remote => true, :method => "put", :id => "country_list_form") do %>
+      <tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Status</th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <% @countries.each do |country| %>
+        <tr>
+          <td><%= country.name %></td>
+          <td><%= country.code %></td>
+          <% unless MyCollection.find_by_user_id_and_country_id(current_user.id, country.code).nil? %>
+            <td colspan=2>Visited</td>
+          <% else %>
+            <td>Not Visited</td>
+            <td>Visit: <%= check_box_tag 'country_id[]', country.id, false, {:id => 'country_id_'+country.id } %></td>
+          <% end %>
+          <td><%= link_to 'Show', country %></td>
+        </tr>
+      <% end %>
+      <tr><td colspan=3><%= submit_tag "Mark as Visited" %></td>
+      <td><a href="#" onclick="selectAll()">Select All</a></td>
+      <td></td></tr>
+    <% end %>
+  </table>
+
+<script type="text/javascript">
+  function selectAll(){
+    $("input:checkbox").each(function(){
+      $(this).attr('checked', true);
+    });
+    return false;
+  }
+
+</script>
+

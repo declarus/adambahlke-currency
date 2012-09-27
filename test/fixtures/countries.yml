@@ -1,0 +1,75 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+#one:
+#  name: NameOne
+#  code: CodeOne
+
+#two:
+#  name: NameTwo
+#  code: CodeTwo
+
+#Some European, North American, and Australia are sample countries
+
+one:
+  name: Bahamas
+  code: BS
+
+two:
+  name: Barbados
+  code: BB
+
+three:
+  name: Belize
+  code: BZ
+
+four:
+  name: Canada
+  code: CA
+
+five:
+  name: Antigua and Barbuda
+  code: AG
+
+six:
+  name: Costa Rica
+  code: CR
+
+seven:
+  name: Cuba
+  code: CU
+
+eight:
+  name: Mexico
+  code: MX
+
+nine:
+  name: United States
+  code: US
+
+ten:
+  name: Italy
+  code: IT
+
+eleven:
+  name: Germany
+  code: DE
+
+twelve:
+  name: France
+  code: FR
+
+thirteen:
+  name: Austria
+  code: AT
+
+fourteen:
+  name: Switzerland
+  code: CH
+
+fifteen:
+  name: Great Britain
+  code: GB
+
+sixteen:
+  name: Australia
+  code: AU

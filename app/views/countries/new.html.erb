@@ -1,0 +1,15 @@
+<h1>New country</h1>
+
+<p>< render 'form' ></p>
+
+<%= form_for @country, :remote => true, :html => { :'data-type' => 'html', :id => 'create_country_form' } do |f| %>
+  <%= f.text_field(:name) %>
+  <%= f.text_field(:code) %>
+  <%= f.check_box(:visited) %>
+  <div class="validation-error"></div>
+  <%= f.submit %>
+<% end %>
+
+<div id="countries"></div>
+
+<%= link_to 'Back', countries_path %>
