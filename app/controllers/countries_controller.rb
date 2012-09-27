@@ -8,10 +8,6 @@ class CountriesController < ApplicationController
   # GET /countries.xml
   def index
     @countries = Country.all(:order => "created_at ASC")
-#    for country in @countries
-#      country.visited = false
-#      country.save
-#    end
     google_chart
 
     respond_to do |format|
@@ -31,10 +27,6 @@ class CountriesController < ApplicationController
       mine.country_id = country.code
       mine.currency_id = Currency.find_by_country_id(country.code).code
       mine.save
-    end
-    @countries = Country.all
-    render :update do |page|
-      page.replace_html 'countries', :partial => 'country_list', :object => @countries
     end
 
     respond_to do |format|
